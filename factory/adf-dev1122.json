@@ -1,0 +1,9 @@
+{
+	"name": "adf-dev1122",
+	"location": "chinaeast2",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "7517f9ed-b8a9-4973-968f-26507f1beadb",
+		"tenantId": "aedafe1a-1c95-46f0-862b-b3444f743bd4"
+	}
+}
