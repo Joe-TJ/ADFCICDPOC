@@ -1,0 +1,17 @@
+{
+	"name": "AzureBlobStorageDestination",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobStorage",
+		"typeProperties": {
+			"connectionString": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "ADFDEVAKV1122",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "blobDestinationConnectionString"
+			}
+		}
+	}
+}
