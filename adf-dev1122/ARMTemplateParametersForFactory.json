@@ -4,6 +4,15 @@
 	"parameters": {
 		"factoryName": {
 			"value": "adf-dev1122"
+		},
+		"ADFDEVAKV1122_properties_typeProperties_baseUrl": {
+			"value": "https://akvadfdev.vault.azure.cn/"
+		},
+		"AzureBlobStorageDestination_properties_typeProperties_connectionString_secretName": {
+			"value": "blobDestinationConnectionString"
+		},
+		"AzureBlobStorageSource_properties_typeProperties_connectionString_secretName": {
+			"value": "blobSourceConnectionString"
 		}
 	}
 }
