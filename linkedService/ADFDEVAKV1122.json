@@ -1,0 +1,10 @@
+{
+	"name": "ADFDEVAKV1122",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://akvadfdev.vault.azure.cn/"
+		}
+	}
+}
