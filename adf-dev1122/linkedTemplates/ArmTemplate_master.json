@@ -7,18 +7,6 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "adf-dev1122"
 		},
-		"ADFDEVAKV1122_properties_typeProperties_baseUrl": {
-			"type": "string",
-			"defaultValue": "https://akvadfdev.vault.azure.cn/"
-		},
-		"AzureBlobStorageDestination_properties_typeProperties_connectionString_secretName": {
-			"type": "string",
-			"defaultValue": "blobDestinationConnectionString"
-		},
-		"AzureBlobStorageSource_properties_typeProperties_connectionString_secretName": {
-			"type": "string",
-			"defaultValue": "blobSourceConnectionString"
-		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -45,15 +33,6 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
-					},
-					"ADFDEVAKV1122_properties_typeProperties_baseUrl": {
-						"value": "[parameters('ADFDEVAKV1122_properties_typeProperties_baseUrl')]"
-					},
-					"AzureBlobStorageDestination_properties_typeProperties_connectionString_secretName": {
-						"value": "[parameters('AzureBlobStorageDestination_properties_typeProperties_connectionString_secretName')]"
-					},
-					"AzureBlobStorageSource_properties_typeProperties_connectionString_secretName": {
-						"value": "[parameters('AzureBlobStorageSource_properties_typeProperties_connectionString_secretName')]"
 					}
 				}
 			},
