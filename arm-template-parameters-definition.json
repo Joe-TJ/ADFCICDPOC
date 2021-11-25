@@ -1,9 +1,10 @@
+{
     "Microsoft.DataFactory/factories/linkedServices": {
         "*": {
             "properties": {
                 "typeProperties": {
-                    "Name": "=" 
+                    "Name": "="
                 }
             }
         }
-    }
+    }}
