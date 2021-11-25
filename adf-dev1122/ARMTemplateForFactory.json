@@ -11,27 +11,13 @@
 			"type": "string",
 			"defaultValue": "https://akvadfdev.vault.azure.cn/"
 		},
-		"AzureBlobStorageDestination_properties_typeProperties_connectionString": {
-			"type": "object",
-			"defaultValue": {
-				"type": "AzureKeyVaultSecret",
-				"store": {
-					"referenceName": "ADFDEVAKV1122",
-					"type": "LinkedServiceReference"
-				},
-				"secretName": "blobDestinationConnectionString"
-			}
+		"AzureBlobStorageDestination_properties_typeProperties_connectionString_secretName": {
+			"type": "string",
+			"defaultValue": "blobDestinationConnectionString"
 		},
-		"AzureBlobStorageSource_properties_typeProperties_connectionString": {
-			"type": "object",
-			"defaultValue": {
-				"type": "AzureKeyVaultSecret",
-				"store": {
-					"referenceName": "ADFDEVAKV1122",
-					"type": "LinkedServiceReference"
-				},
-				"secretName": "blobSourceConnectionString"
-			}
+		"AzureBlobStorageSource_properties_typeProperties_connectionString_secretName": {
+			"type": "string",
+			"defaultValue": "blobSourceConnectionString"
 		}
 	},
 	"variables": {
@@ -45,7 +31,7 @@
 			"properties": {
 				"activities": [
 					{
-						"name": "copyBlobData_v5",
+						"name": "copyBlobData_v1",
 						"type": "Copy",
 						"dependsOn": [],
 						"policy": {
@@ -168,7 +154,14 @@
 				"annotations": [],
 				"type": "AzureBlobStorage",
 				"typeProperties": {
-					"connectionString": "[parameters('AzureBlobStorageDestination_properties_typeProperties_connectionString')]"
+					"connectionString": {
+						"type": "AzureKeyVaultSecret",
+						"store": {
+							"referenceName": "ADFDEVAKV1122",
+							"type": "LinkedServiceReference"
+						},
+						"secretName": "[parameters('AzureBlobStorageDestination_properties_typeProperties_connectionString_secretName')]"
+					}
 				}
 			},
 			"dependsOn": [
@@ -183,7 +176,14 @@
 				"annotations": [],
 				"type": "AzureBlobStorage",
 				"typeProperties": {
-					"connectionString": "[parameters('AzureBlobStorageSource_properties_typeProperties_connectionString')]"
+					"connectionString": {
+						"type": "AzureKeyVaultSecret",
+						"store": {
+							"referenceName": "ADFDEVAKV1122",
+							"type": "LinkedServiceReference"
+						},
+						"secretName": "[parameters('AzureBlobStorageSource_properties_typeProperties_connectionString_secretName')]"
+					}
 				}
 			},
 			"dependsOn": [
