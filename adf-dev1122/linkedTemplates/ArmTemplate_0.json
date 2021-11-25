@@ -6,6 +6,18 @@
 			"type": "string",
 			"metadata": "Data Factory name",
 			"defaultValue": "adf-dev1122"
+		},
+		"ADFDEVAKV1122_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://akvadfdev.vault.azure.cn/"
+		},
+		"AzureBlobStorageDestination_properties_typeProperties_connectionString_secretName": {
+			"type": "string",
+			"defaultValue": "blobDestinationConnectionString"
+		},
+		"AzureBlobStorageSource_properties_typeProperties_connectionString_secretName": {
+			"type": "string",
+			"defaultValue": "blobSourceConnectionString"
 		}
 	},
 	"variables": {
@@ -20,7 +32,7 @@
 				"annotations": [],
 				"type": "AzureKeyVault",
 				"typeProperties": {
-					"baseUrl": "https://akvadfdev.vault.azure.cn/"
+					"baseUrl": "[parameters('ADFDEVAKV1122_properties_typeProperties_baseUrl')]"
 				}
 			},
 			"dependsOn": []
@@ -39,7 +51,7 @@
 							"referenceName": "ADFDEVAKV1122",
 							"type": "LinkedServiceReference"
 						},
-						"secretName": "blobDestinationConnectionString"
+						"secretName": "[parameters('AzureBlobStorageDestination_properties_typeProperties_connectionString_secretName')]"
 					}
 				}
 			},
@@ -61,7 +73,7 @@
 							"referenceName": "ADFDEVAKV1122",
 							"type": "LinkedServiceReference"
 						},
-						"secretName": "blobSourceConnectionString"
+						"secretName": "[parameters('AzureBlobStorageSource_properties_typeProperties_connectionString_secretName')]"
 					}
 				}
 			},
