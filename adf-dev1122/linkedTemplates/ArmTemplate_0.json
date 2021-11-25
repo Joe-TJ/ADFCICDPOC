@@ -11,13 +11,27 @@
 			"type": "string",
 			"defaultValue": "https://akvadfdev.vault.azure.cn/"
 		},
-		"AzureBlobStorageDestination_properties_typeProperties_connectionString_secretName": {
-			"type": "string",
-			"defaultValue": "blobDestinationConnectionString"
+		"AzureBlobStorageDestination_properties_typeProperties_connectionString": {
+			"type": "object",
+			"defaultValue": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "ADFDEVAKV1122",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "blobDestinationConnectionString"
+			}
 		},
-		"AzureBlobStorageSource_properties_typeProperties_connectionString_secretName": {
-			"type": "string",
-			"defaultValue": "blobSourceConnectionString"
+		"AzureBlobStorageSource_properties_typeProperties_connectionString": {
+			"type": "object",
+			"defaultValue": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "ADFDEVAKV1122",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "blobSourceConnectionString"
+			}
 		}
 	},
 	"variables": {
@@ -45,14 +59,7 @@
 				"annotations": [],
 				"type": "AzureBlobStorage",
 				"typeProperties": {
-					"connectionString": {
-						"type": "AzureKeyVaultSecret",
-						"store": {
-							"referenceName": "ADFDEVAKV1122",
-							"type": "LinkedServiceReference"
-						},
-						"secretName": "[parameters('AzureBlobStorageDestination_properties_typeProperties_connectionString_secretName')]"
-					}
+					"connectionString": "[parameters('AzureBlobStorageDestination_properties_typeProperties_connectionString')]"
 				}
 			},
 			"dependsOn": [
@@ -67,14 +74,7 @@
 				"annotations": [],
 				"type": "AzureBlobStorage",
 				"typeProperties": {
-					"connectionString": {
-						"type": "AzureKeyVaultSecret",
-						"store": {
-							"referenceName": "ADFDEVAKV1122",
-							"type": "LinkedServiceReference"
-						},
-						"secretName": "[parameters('AzureBlobStorageSource_properties_typeProperties_connectionString_secretName')]"
-					}
+					"connectionString": "[parameters('AzureBlobStorageSource_properties_typeProperties_connectionString')]"
 				}
 			},
 			"dependsOn": [

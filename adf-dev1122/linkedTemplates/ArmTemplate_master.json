@@ -11,13 +11,27 @@
 			"type": "string",
 			"defaultValue": "https://akvadfdev.vault.azure.cn/"
 		},
-		"AzureBlobStorageDestination_properties_typeProperties_connectionString_secretName": {
-			"type": "string",
-			"defaultValue": "blobDestinationConnectionString"
+		"AzureBlobStorageDestination_properties_typeProperties_connectionString": {
+			"type": "object",
+			"defaultValue": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "ADFDEVAKV1122",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "blobDestinationConnectionString"
+			}
 		},
-		"AzureBlobStorageSource_properties_typeProperties_connectionString_secretName": {
-			"type": "string",
-			"defaultValue": "blobSourceConnectionString"
+		"AzureBlobStorageSource_properties_typeProperties_connectionString": {
+			"type": "object",
+			"defaultValue": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "ADFDEVAKV1122",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "blobSourceConnectionString"
+			}
 		},
 		"containerUri": {
 			"type": "string",
@@ -49,11 +63,11 @@
 					"ADFDEVAKV1122_properties_typeProperties_baseUrl": {
 						"value": "[parameters('ADFDEVAKV1122_properties_typeProperties_baseUrl')]"
 					},
-					"AzureBlobStorageDestination_properties_typeProperties_connectionString_secretName": {
-						"value": "[parameters('AzureBlobStorageDestination_properties_typeProperties_connectionString_secretName')]"
+					"AzureBlobStorageDestination_properties_typeProperties_connectionString": {
+						"value": "[parameters('AzureBlobStorageDestination_properties_typeProperties_connectionString')]"
 					},
-					"AzureBlobStorageSource_properties_typeProperties_connectionString_secretName": {
-						"value": "[parameters('AzureBlobStorageSource_properties_typeProperties_connectionString_secretName')]"
+					"AzureBlobStorageSource_properties_typeProperties_connectionString": {
+						"value": "[parameters('AzureBlobStorageSource_properties_typeProperties_connectionString')]"
 					}
 				}
 			},

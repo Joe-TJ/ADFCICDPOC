@@ -8,11 +8,25 @@
 		"ADFDEVAKV1122_properties_typeProperties_baseUrl": {
 			"value": "https://akvadfdev.vault.azure.cn/"
 		},
-		"AzureBlobStorageDestination_properties_typeProperties_connectionString_secretName": {
-			"value": "blobDestinationConnectionString"
+		"AzureBlobStorageDestination_properties_typeProperties_connectionString": {
+			"value": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "ADFDEVAKV1122",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "blobDestinationConnectionString"
+			}
 		},
-		"AzureBlobStorageSource_properties_typeProperties_connectionString_secretName": {
-			"value": "blobSourceConnectionString"
+		"AzureBlobStorageSource_properties_typeProperties_connectionString": {
+			"value": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "ADFDEVAKV1122",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "blobSourceConnectionString"
+			}
 		}
 	}
 }
