@@ -1,5 +1,13 @@
 {
 	"name": "adf-dev1122",
+	"properties": {
+		"globalParameters": {
+			"sfadf": {
+				"type": "string",
+				"value": "asdfasdf"
+			}
+		}
+	},
 	"location": "chinaeast2",
 	"identity": {
 		"type": "SystemAssigned",
