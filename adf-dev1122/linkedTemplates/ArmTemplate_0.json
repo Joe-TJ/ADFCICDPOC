@@ -7,14 +7,6 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "adf-dev1122"
 		},
-		"dataFactory_location": {
-			"type": "string",
-			"defaultValue": "chinaeast2"
-		},
-		"dataFactory_identity_type": {
-			"type": "string",
-			"defaultValue": "SystemAssigned"
-		},
 		"ADFDEVAKV1122_properties_typeProperties_baseUrl": {
 			"type": "string",
 			"defaultValue": "https://akvadfdev.vault.azure.cn/"
@@ -46,17 +38,6 @@
 		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
 	},
 	"resources": [
-		{
-			"name": "[parameters('factoryName')]",
-			"type": "Microsoft.DataFactory/factories",
-			"apiVersion": "2018-06-01",
-			"properties": {},
-			"dependsOn": [],
-			"location": "[parameters('dataFactory_location')]",
-			"identity": {
-				"type": "[parameters('dataFactory_identity_type')]"
-			}
-		},
 		{
 			"name": "[concat(parameters('factoryName'), '/ADFDEVAKV1122')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",

@@ -28,12 +28,6 @@
 				"secretName": "blobSourceConnectionString"
 			}
 		},
-		"dataFactory_location": {
-			"value": "chinaeast2"
-		},
-		"dataFactory_identity_type": {
-			"value": "SystemAssigned"
-		},
 		"containerUri": {
 			"value": ""
 		},
