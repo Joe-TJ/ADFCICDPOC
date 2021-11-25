@@ -82,7 +82,8 @@
         "*": {
             "properties": {
                 "typeProperties": {
-                    "*":"="
+                    "*": "=",
+                    "name": "-"
                 }
             }
         },
